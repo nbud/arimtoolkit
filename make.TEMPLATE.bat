@@ -1,4 +1,4 @@
-set DATASET=sdh_copper_80.arim
+set DATASET=MyDataset.arim
 
 rem set FLAGS=-s --paper
 rem set FLAGS=-s --noshow
@@ -19,7 +19,7 @@ python -m arimtoolkit.measure_model_scaling_from_tfm %DATASET% %FLAGS% || goto :
 python -m arimtoolkit.tfm_walls %DATASET% %FLAGS% || goto :error
 python -m arimtoolkit.model_sensitivity %DATASET% %FLAGS% || goto :error
 python -m arimtoolkit.model_full %DATASET% %FLAGS% || goto :error
-python -m arimtoolkit.finalise_intensities %DATASET% %FLAGS% || goto :error
+python -m arimtoolkit.collect_intensities %DATASET% %FLAGS% || goto :error
 python -m arimtoolkit.compare_tfm_intensities %DATASET% %FLAGS% || goto :error
 python -m arimtoolkit.convert_svg %DATASET%/*.svg || goto :error
 python -m arimtoolkit.sensitivity %DATASET% %FLAGS% || goto :error

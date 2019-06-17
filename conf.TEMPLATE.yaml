@@ -1,0 +1,65 @@
+probe_key: ima_50_MHz_128_1d
+# probe_key: ima_25_MHz_64_1d
+# probe:
+#   frequency: 5.e6
+#   numx: 64
+#   pitch_x: 0.17e-3
+#   numy: 1
+#   pitch_y: .nan
+#   dimensions: [0.17e-3, 15.e-3, .nan]
+#   metadata:
+#     short_name: 
+#     long_name: Modelled
+#     probe_type: linear
+
+probe_location:
+  ref_element: first
+
+frame:
+  datafile: ../timetraces/DATASET_NAME.mat
+  instrument_delay: 0.
+
+couplant_material:
+  metadata:
+    long_name: Water
+    source: "Bilaniuk and Wong 1993 for water at 20°C"
+  longitudinal_vel: 1480.
+  density: 1000.
+  state_of_matter: liquid
+
+block_material:
+  metadata:
+    long_name: Copper
+    source: "Krautkrämer 1990"
+  longitudinal_vel: 4700.
+  transverse_vel: 2260.
+  density: 8900.
+  state_of_matter: solid
+
+frontwall:
+  numpoints: 2500
+  xmin: -1.e-3
+  xmax: 100.e-3
+  z: 0.
+
+backwall:
+  numpoints: 2500
+  xmin: -1.e-3
+  xmax: 100.e-3
+  z: 26.3e-3
+
+grid:
+  xmin: 0.
+  xmax: 100.e-3
+  pixel_size: .25e-3
+
+filter_for_tfm:
+  order: 4
+  cutoff_min: 2.e+6
+  cutoff_max: 8.e+6
+
+scatterer:
+  specs:
+    kind: sdh
+    radius: 1.e-3
+  angle_deg: 0.

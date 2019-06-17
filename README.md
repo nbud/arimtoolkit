@@ -1,12 +1,35 @@
 # arimtoolkit
 
-Scripts for analysing arim datasets
+Scripts for analysing arim datasets in [ultrasonic testing](https://en.wikipedia.org/wiki/Ultrasonic_testing)
 
-Dependencies: [arim](https://github.com/ndtatbristol/arim), numpy, scipy, matplotlib, pyyaml, tqdm
+Dependencies: Python 3.6 or newer, [arim](https://github.com/ndtatbristol/arim), numpy, scipy, matplotlib, pyyaml, tqdm
 
-[Configuration template](https://github.com/nbud/arimtoolkit/blob/master/conf.TEMPLATE.yaml)
+[Configuration template ``conf.TEMPLATE.yaml``](https://github.com/nbud/arimtoolkit/blob/master/conf.TEMPLATE.yaml)
+
+# Installation
+
+    pip install git+https://github.com/nbud/arimtoolkit.git
+
+Alternatively, [download zip of this repository](https://github.com/nbud/arimtoolkit/archive/master.zip), extract and run:
+
+    python setup.py install
 
 # Usage
+
+Base structure of an arim analysis:
+
+    MyDataset.arim/
+        conf.yaml         # Adapted from conf.TEMPLATE.yaml
+        conf.d/           # Placeholder directory for extra conf files
+
+Results are stored in the ``.arim`` dataset, including its ``conf.d`` directory.
+
+Most scripts have the following flags:
+
+    -s, --save         Save results
+    --noshow           Do not open matplotlib figures
+    --paper            For paper-style figures (SVG/PDF, no title)
+
 
 ## TFM on unknown dataset
 

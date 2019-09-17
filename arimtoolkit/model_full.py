@@ -46,9 +46,8 @@ import arim.models.block_in_immersion as bim
 import arim.im
 import arim.signal  # for imaging
 import arim.scat
-import plot_tfms
 
-from . import common
+from . import common, plot_tfms
 
 save = True
 aplt.conf["savefig"] = True

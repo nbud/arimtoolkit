@@ -123,7 +123,9 @@ def defect_oriented_point(conf):
     )
 
 
-def grid_near_defect(conf, pixel_size=0.15e-3):
+def grid_near_defect(
+    conf, pixel_size=0.15e-3, size_x=MEASUREMENT_DX, size_z=MEASUREMENT_DZ
+):
     """
     return a grid centered at the defect
     """
@@ -132,9 +134,9 @@ def grid_near_defect(conf, pixel_size=0.15e-3):
         defect_centre["x"],
         defect_centre["y"],
         defect_centre["z"],
-        MEASUREMENT_DX,
+        size_x,
         0.0,
-        MEASUREMENT_DZ,
+        size_z,
         pixel_size,
     )
 
